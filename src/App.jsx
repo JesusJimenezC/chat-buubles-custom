@@ -4,7 +4,7 @@ import Chat from './chat'
 import Bubble from './bubble'
 import BubbleInput from './bubble-input'
 import useMessages from './use-messages'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
   const [messages, addMessage] = useMessages([])

@@ -11,8 +11,13 @@ const transition = {
   }
 }
 
-const Bubble = ({ id, children, sender, dy }) => {
+const Bubble = ({ id, children, dy }) => {
   const [isPresent, safeToRemove] = usePresence()
+
+  /* Replace restant spaces at start and end of the string
+   * Delete several consecutive spaces and change them to a single one
+   */
+  const text = children.replace(/(^\s+|\s+$)/g, '').replace(/\s{2,}/g, ' ')
 
   const animations = {
     layout: true,
@@ -32,7 +37,7 @@ const Bubble = ({ id, children, sender, dy }) => {
 
   return (
     <motion.div key={id} className="bubble" {...animations}>
-      <div className="bubble-content">{children}</div>
+      <div className="bubble-content">{text}</div>
     </motion.div>
   )
 }
