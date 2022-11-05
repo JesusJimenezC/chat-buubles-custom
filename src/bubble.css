@@ -5,7 +5,7 @@
 .bubble-content {
   max-width: 600px;
   display: inline-block;
-  border-radius: 30px;
+  border-radius: 5px;
   padding: 12px 20px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -23,22 +23,11 @@
   position: absolute;
   z-index: 0;
   bottom: 0;
-  left: -12px;
-  height: 26px;
-  width: 30px;
-  background: #eee;
-  border-bottom-right-radius: 20px;
-}
+  left: -14px;
 
-.bubble:last-child .bubble-content:after,
-.bubble:nth-last-child(2) .bubble-content:after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: -15px;
-  width: 15px;
-  height: 27px;
-  background: #00a000;
-  border-bottom-right-radius: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 18px 18px;
+  border-color: transparent transparent #eee transparent;
 }
