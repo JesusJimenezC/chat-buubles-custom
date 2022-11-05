@@ -15,9 +15,9 @@ const Bubble = ({ id, children, dy }) => {
   const [isPresent, safeToRemove] = usePresence()
 
   /* Replace restant spaces at start and end of the string
-   * Remove double spaces and replace them by a single space
+   * Delete several consecutive spaces and change them to a single one
    */
-  const text = children.replace(/(^\s+|\s+$)/g, '').replace(/\s+/g, ' ')
+  const text = children.replace(/(^\s+|\s+$)/g, '').replace(/\s{2,}/g, ' ')
 
   const animations = {
     layout: true,
